@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridwan Bin Ashraf Rahi - Portfolio</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#f59e0b',
+                            light: '#fbbf24',
+                            dark: '#d97706',
+                            glow: 'rgba(245, 158, 11, 0.25)',
+                        },
+                        darkbg: {
+                            DEFAULT: '#0a0a0c',
+                            card: '#121216',
+                            border: '#1f1f23',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="text-gray-100 selection:bg-gold selection:text-black">
+
+    <!-- Background Pixel Animation Canvas -->
+    <canvas id="pixel-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full bg-darkbg/85 backdrop-blur-md z-50 border-b border-darkbg-border">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold tracking-wider text-white hover:text-gold transition-colors duration-300">R<span class="text-gold">.</span></a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#objective" class="text-xs uppercase tracking-widest text-gray-400 hover:text-gold transition-colors duration-300">Objective</a>
+                <a href="#education" class="text-xs uppercase tracking-widest text-gray-400 hover:text-gold transition-colors duration-300">Education</a>
+                <a href="#experience" class="text-xs uppercase tracking-widest text-gray-400 hover:text-gold transition-colors duration-300">Experience</a>
+                <a href="#projects" class="text-xs uppercase tracking-widest text-gray-400 hover:text-gold transition-colors duration-300">Projects</a>
+                <a href="#skills" class="text-xs uppercase tracking-widest text-gray-400 hover:text-gold transition-colors duration-300">Skills</a>
+                <a href="#activities" class="text-xs uppercase tracking-widest text-gray-400 hover:text-gold transition-colors duration-300">Interests</a>
+            </div>
+            <!-- Mobile indicator / Simple clean menu -->
+            <a href="#objective" class="md:hidden text-xs uppercase tracking-widest px-3 py-1.5 border border-gold/30 rounded-full text-gold hover:bg-gold/10 transition-all duration-300">Explore</a>
+        </nav>
+    </header>
+
+    <!-- Main Wrapper -->
+    <main class="max-w-4xl mx-auto px-6 pt-24 pb-20 space-y-16">
+
+        <!-- Hero Section -->
+        <section id="hero" class="parallax-section min-h-[85vh] flex flex-col-reverse md:flex-row items-center justify-between gap-12 border-b border-darkbg-border py-16">
+            <div class="parallax-layer flex-1 space-y-6" data-speed="0.2">
+                <div class="inline-flex items-center px-3 py-1 rounded-full border border-gold/20 bg-gold/5 text-gold text-xs font-semibold tracking-wider uppercase">
+                    Electrical & Electronic Engineer
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white serif-font">
+                    Ridwan Bin <br class="hidden md:block">Ashraf Rahi<span class="text-gold gold-glow">.</span>
+                </h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-darkbg-border/60">
+                    <div class="flex items-start gap-3 md:col-span-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-gold shrink-0 mt-1"></i>
+                        <div>
+                            <span class="block text-xs uppercase tracking-wider text-gold font-medium mb-0.5">Address</span>
+                            <span class="text-sm text-gray-300">Bashundhara R/A, Dhaka, BD</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-gold shrink-0 mt-1"></i>
+                        <div>
+                            <span class="block text-xs uppercase tracking-wider text-gold font-medium mb-0.5">Phone</span>
+                            <a href="tel:01333721171" class="text-sm text-gray-300 hover:text-white transition-colors">01333721171</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-gold shrink-0 mt-1"></i>
+                        <div>
+                            <span class="block text-xs uppercase tracking-wider text-gold font-medium mb-0.5">Email</span>
+                            <a href="mailto:binashrafridwan@gmail.com" class="text-sm text-gray-300 hover:text-white transition-colors">binashrafridwan@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Self Image Block with Parallax -->
+            <div class="parallax-layer flex-shrink-0 w-64 h-64 md:w-80 md:h-80 relative group" data-speed="0.08">
+                <!-- Glowing border backing -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-gold-dark to-gold rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+                <!-- Image container -->
+                <div class="relative w-full h-full rounded-2xl overflow-hidden border border-gold/30 bg-darkbg-card">
+                    <img src="img/self.jpeg" alt="Ridwan Bin Ashraf Rahi" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out">
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Objective -->
+        <section id="objective" class="parallax-section py-16 border-b border-darkbg-border">
+            <div class="reveal-wrapper">
+                <div class="parallax-layer" data-speed="-0.1">
+                    <h2 class="text-xs uppercase tracking-widest text-gold font-bold mb-10 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-gold shrink-0"></i><span class="section-line">Career Objective</span></h2>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed font-light text-justify serif-font italic">
+                        "I am an Electrical & Electronic Engineering (EEE) graduate with a practical foundation in circuits, automation components, and system design. Combining my technical background with two years of teaching and mentoring experience, I want to excel as an Assistant Engineer in Sales & Marketing at Automation Engineering & Controls Ltd. I am ready to help grow the business, conduct accurate site surveys, analyze technical requirements, and build strong relationships with industrial clients and panel builders."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="parallax-section py-16 border-b border-darkbg-border">
+            <div class="reveal-wrapper">
+                <div class="parallax-layer" data-speed="0.12">
+                    <h2 class="text-xs uppercase tracking-widest text-gold font-bold mb-10 flex items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4 text-gold shrink-0"></i><span class="section-line">Education</span></h2>
+                    <div class="experience-card p-6 md:p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-all duration-500"></div>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                            <div>
+                                <h3 class="text-xl md:text-2xl text-white font-medium">American International University-Bangladesh (AIUB)</h3>
+                                <p class="text-sm text-gold mt-1 font-semibold">Bachelor of Science in Electrical & Electronic Engineering (BSc in EEE)</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-md bg-gold/10 text-gold text-xs font-semibold border border-gold/20">Graduation: 2026</span>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">Dhaka, Bangladesh</p>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            <strong>Core focus areas:</strong> Electrical circuits, thermodynamics, calculus, power systems, and industrial automation.
+                        </p>
+                        <div class="border-t border-darkbg-border pt-4">
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-gold font-bold">—</span>
+                                    <span>Built a strong foundation in evaluating power configurations, understanding industrial component specs, and setting up system simulations.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience" class="parallax-section py-16 border-b border-darkbg-border">
+            <div class="reveal-wrapper">
+                <div class="parallax-layer" data-speed="-0.08">
+                    <h2 class="text-xs uppercase tracking-widest text-gold font-bold mb-10 flex items-center gap-2"><i data-lucide="briefcase" class="w-4 h-4 text-gold shrink-0"></i><span class="section-line">Professional Experience</span></h2>
+                    <div class="experience-card p-6 md:p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-all duration-500"></div>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                            <div>
+                                <h3 class="text-xl md:text-2xl text-white font-medium">Technical Educator / Academic Tutor</h3>
+                                <p class="text-sm text-gold mt-1 font-semibold">Independent Educational Practice</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-md bg-gold/10 text-gold text-xs font-semibold border border-gold/20">Oct 2024 - Present</span>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-6">Dhaka, Bangladesh</p>
+                        
+                        <ul class="space-y-4 text-gray-300 text-sm">
+                            <li class="flex items-start gap-3">
+                                <span class="text-gold font-bold mt-0.5">—</span>
+                                <span class="leading-relaxed">Designed structured lesson plans and tracked daily academic progress for math and science students over a two-year period.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-gold font-bold mt-0.5">—</span>
+                                <span class="leading-relaxed">Explained difficult subjects like circuit layouts, thermodynamics, and calculus in a clear, easy-to-understand way.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-gold font-bold mt-0.5">—</span>
+                                <span class="leading-relaxed">Built strong trust and clear lines of communication with parents and students through regular progress reviews.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Labs -->
+        <section id="projects" class="parallax-section py-16 border-b border-darkbg-border">
+            <div class="reveal-wrapper">
+                <div class="parallax-layer space-y-8" data-speed="0.15">
+                    <h2 class="text-xs uppercase tracking-widest text-gold font-bold mb-10 flex items-center gap-2"><i data-lucide="code" class="w-4 h-4 text-gold shrink-0"></i><span class="section-line">Engineering Projects &amp; Labs</span></h2>
+                    
+                    <!-- University Lab Circuit Analysis -->
+                    <div class="project-card p-6 md:p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-all duration-500"></div>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                            <div>
+                                <h3 class="text-xl md:text-2xl text-white font-medium">Electrical Systems & Circuit Analysis Portfolio</h3>
+                                <p class="text-sm text-gold mt-1 font-semibold">AIUB Laboratory Practice</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-gray-300 text-sm mt-6">
+                            <li class="flex items-start gap-3">
+                                <span class="text-gold font-bold mt-0.5">—</span>
+                                <span class="leading-relaxed">Designed and analyzed complex electrical networks (mesh and nodal) in laboratory courses, gaining hands-on circuit layout experience.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-gold font-bold mt-0.5">—</span>
+                                <span class="leading-relaxed">Modeled systems to evaluate thermodynamic properties, power balances, and electrical component requirements.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- EEE Light Indicator Hardware Project -->
+                    <div class="project-card p-6 md:p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-all duration-500"></div>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                            <div>
+                                <h3 class="text-xl md:text-2xl text-white font-medium">Light Indicator System Design</h3>
+                                <p class="text-sm text-gold mt-1 font-semibold">EEE Hardware Project</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-gray-300 text-sm my-6">
+                            <li class="flex items-start gap-3">
+                                <span class="text-gold font-bold mt-0.5">—</span>
+                                <span class="leading-relaxed">Designed and assembled an EEE hardware prototype for an automated light indicator circuit.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-gold font-bold mt-0.5">—</span>
+                                <span class="leading-relaxed">Integrated light-sensitive sensors and relay automation controls to detect ambient luminance and activate alert indicators dynamically.</span>
+                            </li>
+                        </ul>
+
+                        <!-- Project Images Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <div class="rounded-xl overflow-hidden border border-darkbg-border bg-darkbg-card aspect-[4/3] relative group/img">
+                                <img src="img/project/lab_1.jpeg" alt="Light Indicator Prototype Setup" class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 group-hover/img:scale-105 transition-all duration-700 ease-out">
+                            </div>
+                            <div class="rounded-xl overflow-hidden border border-darkbg-border bg-darkbg-card aspect-[4/3] relative group/img">
+                                <img src="img/project/lab_2.jpeg" alt="Circuit Schematics" class="w-full h-full object-cover grayscale group-hover/img:grayscale-0 group-hover/img:scale-105 transition-all duration-700 ease-out">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Competencies -->
+        <section id="skills" class="parallax-section py-16 border-b border-darkbg-border">
+            <div class="reveal-wrapper">
+                <div class="parallax-layer" data-speed="-0.1">
+                    <h2 class="text-xs uppercase tracking-widest text-gold font-bold mb-10 flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4 text-gold shrink-0"></i><span class="section-line">Skills &amp; Competencies</span></h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-xl bg-darkbg-card border border-darkbg-border hover:border-gold/30 transition-all duration-300">
+                            <h4 class="text-xs uppercase tracking-widest text-gold font-bold mb-3">Engineering Core</h4>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Nodal & Mesh Network Analysis, Electrical Circuit Design, System Requirement Analysis, Technical Site Survey Fundamentals, Power Electronics.
+                            </p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-darkbg-card border border-darkbg-border hover:border-gold/30 transition-all duration-300">
+                            <h4 class="text-xs uppercase tracking-widest text-gold font-bold mb-3">Technical Products</h4>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Familiarity with Circuit Breakers, Conductors, Variable Frequency Drives (VFDs), and Automation Cables.
+                            </p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-darkbg-card border border-darkbg-border hover:border-gold/30 transition-all duration-300">
+                            <h4 class="text-xs uppercase tracking-widest text-gold font-bold mb-3">Tools &amp; Systems</h4>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                MATLAB, Circuit Simulation Frameworks, Microsoft Office Suite (Word, Excel), macOS Ecosystem.
+                            </p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-darkbg-card border border-darkbg-border hover:border-gold/30 transition-all duration-300">
+                            <h4 class="text-xs uppercase tracking-widest text-gold font-bold mb-3">Professional Strengths</h4>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Target-Oriented Pitching, Client Relationship Management, Clear Technical Communication, Corporate Collaboration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extra-Curricular & Interests -->
+        <section id="activities" class="parallax-section py-16">
+            <div class="reveal-wrapper">
+                <div class="parallax-layer space-y-10" data-speed="0.08">
+                    <div>
+                        <h2 class="text-xs uppercase tracking-widest text-gold font-bold mb-10 flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-gold shrink-0"></i><span class="section-line">Extra-Curricular &amp; Interests</span></h2>
+                        <ul class="space-y-4 text-gray-300 text-sm">
+                            <li class="flex items-start gap-3">
+                                <span class="text-gold font-bold mt-0.5">—</span>
+                                <span class="leading-relaxed">Played football regularly and represented my university in competitive athletic tournaments.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-gold font-bold mt-0.5">—</span>
+                                <span class="leading-relaxed">Interested in botany, observing nature, and identifying plant species in the field.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Football Image Carousel (Portrait - Larger and Free-Flowing) -->
+                    <div class="space-y-6 max-w-md mx-auto">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-white text-center">Athletic Highlights</h3>
+                        
+                        <div class="relative">
+                            <!-- Carousel Viewport -->
+                            <div id="football-carousel" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-none h-[560px] rounded-2xl border border-darkbg-border bg-darkbg-card">
+                                <div class="snap-center shrink-0 w-full h-full relative overflow-hidden">
+                                    <img src="img/football/football_1.jpeg" alt="Athletic Highlights 1" class="w-full h-full object-cover transition-transform duration-1000 ease-out origin-center">
+                                </div>
+                                <div class="snap-center shrink-0 w-full h-full relative overflow-hidden">
+                                    <img src="img/football/football_2.jpeg" alt="Athletic Highlights 2" class="w-full h-full object-cover transition-transform duration-1000 ease-out origin-center">
+                                </div>
+                                <div class="snap-center shrink-0 w-full h-full relative overflow-hidden">
+                                    <img src="img/football/football_3.jpeg" alt="Athletic Highlights 3" class="w-full h-full object-cover transition-transform duration-1000 ease-out origin-center">
+                                </div>
+                            </div>
+                            
+                            <!-- Floating Slide navigation arrows -->
+                            <button id="prev-slide" aria-label="Previous image" class="absolute -left-14 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-darkbg/90 border border-gold/40 flex items-center justify-center text-gold hover:bg-gold hover:text-black hover:border-gold hover:scale-110 shadow-lg shadow-gold/10 transition-all duration-300 z-10 hidden md:flex">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            </button>
+                            <button id="next-slide" aria-label="Next image" class="absolute -right-14 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-darkbg/90 border border-gold/40 flex items-center justify-center text-gold hover:bg-gold hover:text-black hover:border-gold hover:scale-110 shadow-lg shadow-gold/10 transition-all duration-300 z-10 hidden md:flex">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+
+                        <!-- Indicator Dots -->
+                        <div class="flex justify-center gap-2">
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-gold transition-all duration-300" data-index="0" aria-label="Go to slide 1"></button>
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300" data-index="1" aria-label="Go to slide 2"></button>
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-zinc-700 transition-all duration-300" data-index="2" aria-label="Go to slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-darkbg-border py-8 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Ridwan Bin Ashraf Rahi. All rights reserved.</p>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

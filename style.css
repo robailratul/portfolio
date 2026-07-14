@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+    --bg-dark: #0a0a0c;
+    --card-bg: #121216;
+    --text-light: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-gold: #f59e0b; /* Vibrant amber/gold */
+    --accent-gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    --accent-glow: rgba(245, 158, 11, 0.15);
+}
+
+/* Base resets & scroll behavior */
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-dark);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-light);
+    background-color: transparent;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .serif-font {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-gold);
+}
+
+/* Parallax Scroll Reveal Classes */
+.parallax-section {
+    position: relative;
+    will-change: transform, opacity;
+}
+
+.parallax-layer {
+    transition: transform 0.1s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+/* Clip-path reveal effect */
+.reveal-wrapper {
+    position: relative;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-wrapper.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Accent Glow and Underline */
+.gold-glow {
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.section-line {
+    position: relative;
+}
+
+.section-line::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-gold-gradient);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+    transition: width 0.8s ease-in-out;
+}
+
+.parallax-section.active .section-line::after {
+    width: 120px;
+}
+
+/* Cards & Interactive elements */
+.experience-card, .project-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-card:hover, .project-card:hover {
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 10px 30px -15px rgba(245, 158, 11, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Ken Burns slow zoom animation for active carousel image */
+@keyframes kenBurnsZoom {
+    from {
+        transform: scale(1.0);
+    }
+    to {
+        transform: scale(1.12);
+    }
+}
+
+.active-zoom {
+    animation: kenBurnsZoom 2.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
